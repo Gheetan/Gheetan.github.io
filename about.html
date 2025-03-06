@@ -17,6 +17,7 @@
             background-color: #4CAF50;
             color: white;
             padding: 20px;
+            width: 100%;
         }
         nav {
             background-color: #333;
@@ -34,6 +35,42 @@
             background-color: #ddd;
             color: black;
         }
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 20px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
         .section {
             margin: 20px auto;
             max-width: 800px;
@@ -50,6 +87,32 @@
             bottom: 0;
             width: 100%;
         }
+
+        @font-face {
+            font-family: 'Tengwar';
+            src: url('tengwarfeanorregular.ttf') format('truetype');
+        }
+
+        .tengwar-text {
+            font-family: 'Tengwar', sans-serif;
+        }
+
+        .anthem-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .anthem-container div {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .anthem-title {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -58,13 +121,69 @@
     </header>
     <nav>
         <a href="index.html">Home</a>
-        <a href="Constitution.html">Constitution</a>
-        <a href="Laws.html">laws</a>
-        <a href="other micronations.html">micronations</a>
-        <a href="friends.html">Citizenship & Immigration Policy</a>
-        <a href="militare.html">government</a>
-        <a href="news.html">Sky & Hill Report</a>
-
+        <div class="dropdown">
+            <button class="dropbtn">About 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="about.html">English</a>
+                <a href="about_tengwar.html">Tengwar</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Constitution 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="Constitution.html">English</a>
+                <a href="Constitution_tengwar.html">Tengwar</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Laws 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="Laws.html">English</a>
+                <a href="Laws_tengwar.html">Tengwar</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Micronations 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="other micronations.html">English</a>
+                <a href="other_micronations_tengwar.html">Tengwar</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Citizenship & Immigration Policy 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="friends.html">English</a>
+                <a href="friends_tengwar.html">Tengwar</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Government 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="militare.html">English</a>
+                <a href="militare_tengwar.html">Tengwar</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Sky & Hill Report 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="news.html">English</a>
+                <a href="news_tengwar.html">Tengwar</a>
+            </div>
+        </div>
     </nav>
     <main>
         <img src="flag.jpg" alt="Emblem of the Great Gheetan Empire" style="display: block; margin: 0 auto; width: 350px; height: auto;">
@@ -90,4 +209,3 @@
     </footer>
 </body>
 </html>
-
