@@ -7,9 +7,7 @@
     <meta name="keywords" content="The Great Gheetan Empire, micronation, website, GitHub Pages">
     <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="2_mfK45a3mrd1yOZeWIUq5M2DPPJvACFM0W7BiNScSc" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico"
-    <img src="flag - Copy.png" alt="Custom Logomark" class="logo">
-
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>The Great Gheetan Empire</title>
     <style>
         body {
@@ -24,6 +22,7 @@
             background-color: #4CAF50;
             color: white;
             padding: 20px;
+            width: 100%;
         }
         nav {
             background-color: #333;
@@ -41,8 +40,41 @@
             background-color: #ddd;
             color: black;
         }
-        main {
-            padding: 20px;
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 20px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
         .section {
             margin: 20px auto;
@@ -60,29 +92,177 @@
             bottom: 0;
             width: 100%;
         }
+
+        @font-face {
+            font-family: 'Tengwar';
+            src: url('tengwarfeanorregular.ttf') format('truetype');
+        }
+
+        .tengwar-text {
+            font-family: 'Tengwar', sans-serif;
+        }
+
+        .anthem-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .anthem-container div {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .anthem-title {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>The Great Gheetan Empire</h1>
-        <p>"Unity, Prosperity, Sovereignty"</p>
-    </header>
- <nav>
-        <a href="about.html">About</a>
-        <a href="Constitution.html">Constitution</a>
-        <a href="Laws.html">laws</a>
-        <a href="other micronations.html">micronations</a>
-        <a href="friends.html">Citizenship & Immigration Policy</a>
-        <a href="militare.html">government</a>
-        <a href="news.html">Sky & Hill Report</a>
-    </nav>
-    <main>
-        <img src="name.jpg" alt="Emblem of the Great Gheetan Empire" style="display: block; margin: 0 auto; width: 500px; height: auto;">
-        <section id="home" class="section">
-            <h2>Welcome to The Great Gheetan Empire</h2>
-            <p>Stay look around lern about The Great Gheetan Empire's laws and constitution.</p>
-        </section>
-    </main>
+    <div class="content">
+        <header>
+            <h1>The Great Gheetan Empire</h1>
+            <p>"Unity, Prosperity, Sovereignty"</p>
+        </header>
+        <nav>
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">About 
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="about.html">English</a>
+                    <a href="about_tengwar.html">Tengwar</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Constitution 
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="Constitution.html">English</a>
+                    <a href="Constitution_tengwar.html">Tengwar</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Laws 
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="Laws.html">English</a>
+                    <a href="Laws_tengwar.html">Tengwar</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Micronations 
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="other micronations.html">English</a>
+                    <a href="other_micronations_tengwar.html">Tengwar</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Citizenship & Immigration Policy 
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="friends.html">English</a>
+                    <a href="friends_tengwar.html">Tengwar</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Government 
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="militare.html">English</a>
+                    <a href="militare_tengwar.html">Tengwar</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Sky & Hill Report 
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="news.html">English</a>
+                    <a href="news_tengwar.html">Tengwar</a>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            <section id="home" class="section">
+                <h2>Welcome to The Great Gheetan Empire</h2>
+                <p>Stay, look around, and learn about The Great Gheetan Empire's laws and constitution.</p>
+                <p><strong>Fun Facts</strong></p>
+                <p>Gheetan's national anthem "The Gheetan Loth" in the Sindarin version can be interpreted as a symbolic representation of the nation’s strength, unity, or essence. In Sindarin, "Loth" could suggest a flower or a bloom, which is often used metaphorically to signify something precious, beautiful, or strong. Thus, "Gheetan Loth" could evoke the image of the flourishing or growth of the Great Gheetan Empire, symbolizing both beauty and strength.</p>
+                <p>Gheetan's second language is Sindarin.</p>
+                <p>Gheetan's second script is Tengwar.</p>
+            </section>
+        </main>
+    </div>
+    <aside>
+        <h2><strong>The Gheetan Loth</strong></h2>
+        <div class="anthem-container">
+            <div>
+                <p class="anthem-title">Tengwar Script</p>
+                <p class="tengwar-text">
+                From the green hills to the sky,<br>
+                A land of peace, where hearts stand high.<br>
+                Through trials, we have stood as one,<br>
+                The Gheetan Empire has begun!
+                </p>
+                <p class="tengwar-text">
+                Great Gheetan, our land so proud,<br>
+                With green and blue, our voices loud.<br>
+                For the crown, for the Empire,<br>
+                We raise our hearts and never tire!
+                </p>
+                <p class="tengwar-text">
+                Our soldiers stand, both brave and true,<br>
+                Defenders of the land in view.<br>
+                With allies strong and peace in hand,<br>
+                We honor the strength of this great land.
+                </p>
+                <p class="tengwar-text">
+                Great Gheetan, forever we rise,<br>
+                With the green and blue beneath the skies.<br>
+                But in the quiet, we remember too,<br>
+                The price of peace, and what we’ve been through.
+                </p>
+            </div>
+            <div>
+                <p class="anthem-title">English Script</p>
+                <p>
+                From the green hills to the sky,<br>
+                A land of peace, where hearts stand high.<br>
+                Through trials, we have stood as one,<br>
+                The Gheetan Empire has begun!
+                </p>
+                <p>
+                Great Gheetan, our land so proud,<br>
+                With green and blue, our voices loud.<br>
+                For the crown, for the Empire,<br>
+                We raise our hearts and never tire!
+                </p>
+                <p>
+                Our soldiers stand, both brave and true,<br>
+                Defenders of the land in view.<br>
+                With allies strong and peace in hand,<br>
+                We honor the strength of this great land.
+                </p>
+                <p>
+                Great Gheetan, forever we rise,<br>
+                With the green and blue beneath the skies.<br>
+                But in the quiet, we remember too,<br>
+                The price of peace, and what we’ve been through.
+                </p>
+            </div>
+        </div>
+    </aside>
     <footer>
         <p>&copy; The Great Gheetan Empire. All rights reserved.</p>
     </footer>
