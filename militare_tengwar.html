@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Finances & Defense - The Great Gheetan Empire</title>
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+        text-align: center;
+    }
+    
+    header {
+        background-color: #4CAF50;
+        color: white;
+        padding: 20px;
+        width: 100%;
+    }
+    
+    nav {
+        background-color: #333;
+        overflow: hidden;
+    }
+    
+    nav a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+    }
+    
+    nav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+    
+    .dropdown {
+        float: left;
+        overflow: hidden;
+    }
+    
+    .dropdown .dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 20px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    
+    .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+    
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    
+    /* New CSS for sub-dropdown: only show when hovering the sub-menu */
+    .dropdown-sub {
+        position: relative;
+    }
+    
+    .dropdown-sub:hover .dropdown-content-sub {
+        display: block;
+    }
+    
+    .dropdown-content-sub {
+        display: none;
+        position: absolute;
+        left: 100%;
+        top: 0;
+        background-color: #ddd;
+        min-width: 140px;
+        z-index: 1;
+    }
+    
+    .dropdown-content-sub a {
+        color: black;
+        padding: 10px 12px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+    
+    .dropdown-content-sub a:hover {
+        background-color: #bbb;
+    }
+    
+    .section {
+        margin: 20px auto;
+        max-width: 800px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    footer {
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
+    
+    @font-face {
+        font-family: 'Tengwar';
+        src: url('tengwarfeanorregular.ttf') format('truetype');
+    }
+    
+    .tengwar-text {
+        font-family: 'Tengwar', sans-serif;
+    }
+    
+    .anthem-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    
+    .anthem-container div {
+        flex: 1;
+        min-width: 300px;
+    }
+    
+    .anthem-title {
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+    
+       </style>   
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+    
+        <div class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">About</a>
+            <div class="dropdown-content">
+                <a href="about.html">English</a>
+                <a href="about_tengwar.html">Tengwar</a>
+            </div>
+        </div>
+    
+        <div class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Honors</a>
+            <div class="dropdown-content">
+                <a href="honors.html">English</a>
+                <a href="honors_tengwar.html">Tengwar</a>
+            </div>
+        </div>
+    
+        <div class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Micronations</a>
+            <div class="dropdown-content">
+                <a href="other micronations.html">English</a>
+                <a href="other_micronations_tengwar.html">Tengwar</a>
+            </div>
+        </div>
+    
+        <div class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Government</a>
+            <div class="dropdown-content">
+                <div class="dropdown-sub">
+                    <a href="javascript:void(0)" class="dropbtn-sub">Constitution</a>
+                    <div class="dropdown-content-sub">
+                        <a href="Constitution.html">English</a>
+                        <a href="Constitution_tengwar.html">Tengwar</a>
+                    </div>
+                </div>
+    
+                <div class="dropdown-sub">
+                    <a href="javascript:void(0)" class="dropbtn-sub">Laws</a>
+                    <div class="dropdown-content-sub">
+                        <a href="Laws.html">English</a>
+                        <a href="Laws_tengwar.html">Tengwar</a>
+                    </div>
+                </div>
+    
+                <div class="dropdown-sub">
+                    <a href="javascript:void(0)" class="dropbtn-sub">Citizenship & Immigration Policy</a>
+                    <div class="dropdown-content-sub">
+                        <a href="friends.html">English</a>
+                        <a href="friends_tengwar.html">Tengwar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Arcadia</a>
+            <div class="dropdown-content">
+                <a href="arcadia.html">English</a>
+            </div>
+        </div>
+    
+        <div class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Sky & Hill Report</a>
+            <div class="dropdown-content">
+                <a href="news.html">English</a>
+                <a href="news_tengwar.html">Tengwar</a>
+            </div>
+        </div>
+    
+        <a href="password.html">Restricted Access</a>  
+        <a href="contact.html">Contact us!</a>  
+    </nav>
+    <main>
+        <img src="Image.png" alt="Emblem of the Great Gheetan Empire" style="display: block; margin: 0 auto; width: 250px; height: auto;">
+        <h1>Government Finances & Defense</h1>
+
+        <div class="section">
+            <h2>Currency & Economy</h2>
+            <p class="tengwar-text"><strong>Official Currency:</strong> The **Glawar**</p>
+            <p class="tengwar-text"><strong>Economic Structure:</strong> The economy is fully controlled by the Emperor. There are currently no major industries or sources of wealth.</p>
+            <p class="tengwar-text"><strong>Trade & Commerce:</strong> The Great Gheetan Empire does not currently engage in trade with other nations or micronations.</p>
+        </div>
+
+        <div class="section">
+            <h2>Taxation & Budget</h2>
+            <p class="tengwar-text"><strong>Taxes:</strong> The Great Gheetan Empire does not impose taxes on its citizens.</p>
+            <p class="tengwar-text"><strong>Budget Management:</strong> The Emperor controls the allocation of the national budget.</p>
+            <p class="tengwar-text"><strong>Spending Priorities:</strong> Budget funds are allocated to the Emperor, and people may decide what it goes toward.</p>
+        </div>
+
+        <div class="section">
+            <h2>Military & Defense</h2>
+            <p class="tengwar-text"><strong>Military Name:</strong> The Imperial Guard.</p>
+            <p class="tengwar-text"><strong>Active Members:</strong> There are no active members at this time.</p>
+            <p class="tengwar-text"><strong>Main Purpose:</strong> The military exists for **defense and alliances**.</p>
+            <p class="tengwar-text"><strong>Mandatory Service:</strong> Military service is **not required** for citizens.</p>
+            <p class="tengwar-text"><strong>Alliances & Defense Agreements:</strong> The Great Gheetan Empire has military alliances and defense agreements with other nations.</p>
+        </div>
+    </main>
+    <footer>
+        &copy; 2024 The Great Gheetan Empire
+    </footer>
+</body>
+</html>
