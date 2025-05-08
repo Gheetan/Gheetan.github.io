@@ -182,11 +182,23 @@
             cursor: pointer;
             text-decoration: underline;
         }
+        button {
+      background-color: #800000;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #a52a2a;
+    }
     </style>
-     <audio autoplay>
-    <source src="Gheetan Loth.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+    
+
 </head>
 <body>
     <div class="content">
@@ -268,6 +280,12 @@
             <a href="password.html">Restricted Access</a>  
             <a href="contact.html">Contact us!</a>  
         </nav>
+        <button onclick="document.getElementById('anthem').play()">Play National Anthem</button>
+
+  <audio id="anthem">
+    <source src="Gheetan Loth.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
         <main>
             <section id="home" class="section">
                 <h2>Welcome to The Great Gheetan Empire</h2>
@@ -419,6 +437,12 @@
                 futureHolidays.map(h => `<li class="holiday-item" onclick="alert('${h.description || h.name}')">${h.name} (${h.date})</li>`).join('') +
                 '</ul>';
         }
-        </script>        
+        </script> 
+        <script>
+            document.body.addEventListener('click', function () {
+              document.getElementById('anthem').play();
+            }, { once: true });
+          </script>
+            
 </body>
 </html>
