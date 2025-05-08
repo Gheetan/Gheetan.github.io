@@ -49,6 +49,9 @@
     import {
       getStorage, ref as sref, uploadBytes, getDownloadURL
     } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-storage.js";
+    import {
+      getMessaging, getToken
+    } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-messaging.js";
 
     // --- Firebase Init ---
     const firebaseConfig = {
@@ -60,14 +63,44 @@
       appId: "1:802307515320:web:1c32e515b00f944def254d",
       measurementId: "G-F4YSYYJ2K8"
     };
-    const app     = initializeApp(firebaseConfig);
-    const db      = getFirestore(app);
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
     const storage = getStorage(app);
+    const messaging = getMessaging(app);
 
     const PASSWORD = "GlaWaR";
     let currentUser = { name: "", email: "", avatarUrl: "" };
 
-    // Check if the user is already logged in from previous session
+    // --- Firebase Cloud Messaging ---
+    async function requestNotificationPermission() {
+      try {
+        const token = await getToken(messaging, {
+          vapidKey: "YOUR_VAPID_PUBLIC_KEY"  // Replace with your VAPID public key
+        });
+
+        if (token) {
+          console.log("Notification permission granted. FCM Token:", token);
+          // Send token to your server or Firestore to store it for later notifications
+        } else {
+          console.log("No permission granted for notifications.");
+        }
+      } catch (err) {
+        console.error("Error requesting notification permission:", err);
+      }
+    }
+
+    // --- Service Worker Registration ---
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/firebase-messaging-sw.js')
+        .then(function (registration) {
+          console.log('Service Worker registered with scope:', registration.scope);
+        })
+        .catch(function (error) {
+          console.log('Service Worker registration failed:', error);
+        });
+    }
+
+    // --- Check for Login ---
     window.onload = function () {
       if (localStorage.getItem("email") && localStorage.getItem("name") && localStorage.getItem("avatarUrl")) {
         currentUser.email = localStorage.getItem("email");
@@ -76,18 +109,21 @@
         document.getElementById("authForm").style.display = "none";
         document.getElementById("chat").style.display = "block";
         startChat();
+
+        // Request notification permission after login
+        requestNotificationPermission();
       }
     };
 
-    // Login Button
+    // --- Login Functionality ---
     document.getElementById("loginBtn").addEventListener("click", login);
 
     async function login() {
-      const rawEmail  = document.getElementById("email").value.trim();
-      const name      = document.getElementById("name").value.trim();
+      const rawEmail = document.getElementById("email").value.trim();
+      const name = document.getElementById("name").value.trim();
       const avatarUrl = document.getElementById("avatarUrl").value.trim();
-      const pass      = document.getElementById("password").value.trim();
-      const statusEl  = document.getElementById("status");
+      const pass = document.getElementById("password").value.trim();
+      const statusEl = document.getElementById("status");
 
       console.clear();
       console.log("🔑 Login attempt:", rawEmail, name);
@@ -123,7 +159,7 @@
         console.log("🚪 Approved! Showing chat…");
         statusEl.innerText = "";
         document.getElementById("authForm").style.display = "none";
-        document.getElementById("chat").style.display    = "block";
+        document.getElementById("chat").style.display = "block";
         startChat();
       }
     }
@@ -133,10 +169,11 @@
       return snap.docs.map(d => (d.data().email || "").toLowerCase());
     }
 
+    // --- Start Chat Functionality ---
     function startChat() {
-      const chatBox      = document.getElementById("chatBox");
+      const chatBox = document.getElementById("chatBox");
       const messageInput = document.getElementById("message");
-      const form         = document.getElementById("messageForm");
+      const form = document.getElementById("messageForm");
 
       // Listen for messages
       const q = query(collection(db, "chat"), orderBy("timestamp", "asc"));
@@ -180,30 +217,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
