@@ -294,5 +294,73 @@
     <footer>
         &copy; The Great Gheetan Empire
     </footer>
+    <style>
+  #secretPrompt {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #111;
+    border: 3px solid #FFD700;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+    color: white;
+    font-family: 'Georgia', serif;
+    text-align: center;
+  }
+ 
+  #secretPrompt input {
+    padding: 10px;
+    margin-top: 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+ 
+  #secretPrompt button {
+    margin-top: 15px;
+    background-color: #FFD700;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+ 
+  #secretPrompt button:hover {
+    background-color: #e6c200;
+  }
+</style>
+ 
+<div id="secretPrompt">
+<h2>Enter Clearance Code</h2>
+<input type="password" id="secretInput" placeholder="Enter password..." />
+<br/>
+<button onclick="checkSecret()">Submit</button>
+</div>
+ 
+<script>
+  document.addEventListener('keydown', function (e) {
+    if (e.ctrlKey && e.altKey && e.key.toLowerCase() === 'q') {
+      const prompt = document.getElementById('secretPrompt');
+      prompt.style.display = 'block';
+      document.getElementById('secretInput').focus();
+    }
+  });
+ 
+  function checkSecret() {
+    const input = document.getElementById('secretInput').value;
+    if (input === 'Micro2025!') {
+      window.location.href = 'https://arcadiagov.github.io/aRatERTYPoNAcIaNcHOLoCoRTEniatOrSideDgEOuRemILiaNC.html';
+    } else {
+      alert('Incorrect password. Access denied.');
+    }
+  }
+</script>
 </body>
 </html>
