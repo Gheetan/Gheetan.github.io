@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Great Gheetan Empire - Your Micronation Website">
+    <meta name="keywords" content="The Great Gheetan Empire, micronation, website, GitHub Pages, Gheetan, Gheetan Empire, Gheetan Emperor, gheetan, gheetan empire">
+    <meta name="robots" content="index, follow">
+    <meta name="google-site-verification" content="2_mfK45a3mrd1yOZeWIUq5M2DPPJvACFM0W7BiNScSc" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>The Great Gheetan Empire</title>
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+        text-align: center;
+    }
+    
+    header {
+        background-color: #4CAF50;
+        color: white;
+        padding: 20px;
+        width: 100%;
+    }
+    
+    nav {
+        background-color: #333;
+        overflow: hidden;
+    }
+    
+    nav a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+    }
+    
+    nav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+    
+    .dropdown {
+        float: left;
+        overflow: hidden;
+    }
+    
+    .dropdown .dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 20px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    
+    .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+    
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    
+    /* New CSS for sub-dropdown: only show when hovering the sub-menu */
+    .dropdown-sub {
+        position: relative;
+    }
+    
+    .dropdown-sub:hover .dropdown-content-sub {
+        display: block;
+    }
+    
+    .dropdown-content-sub {
+        display: none;
+        position: absolute;
+        left: 100%;
+        top: 0;
+        background-color: #ddd;
+        min-width: 140px;
+        z-index: 1;
+    }
+    
+    .dropdown-content-sub a {
+        color: black;
+        padding: 10px 12px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+    
+    .dropdown-content-sub a:hover {
+        background-color: #bbb;
+    }
+    
+    .section {
+        margin: 20px auto;
+        max-width: 800px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    footer {
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
+    
+    @font-face {
+        font-family: 'Tengwar';
+        src: url('tengwarfeanorregular.ttf') format('truetype');
+    }
+    
+    .tengwar-text {
+        font-family: 'Tengwar', sans-serif;
+    }
+    
+    .anthem-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    
+    .anthem-container div {
+        flex: 1;
+        min-width: 300px;
+    }
+    
+    .anthem-title {
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+    
+        .holiday-box {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fffbe0;
+            border: 2px dashed #4CAF50;
+            border-radius: 10px;
+        }
+        .holiday-box h2 {
+            margin-top: 0;
+        }
+        .holiday-message {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #D2691E;
+            margin-bottom: 15px;
+        }
+        .holiday-item:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        button {
+      background-color: #800000;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #a52a2a;
+    }
+    </style>
+    
+
+</head>
+<body>
+    <div class="content">
+        <header>
+            <h1>The Great Gheetan Empire</h1>
+            <p>"Unity, Prosperity, Sovereignty"</p>
+        </header>
+        <nav>
+            <a href="index.html">Home</a>
+        
+            <div class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">About</a>
+                <div class="dropdown-content">
+                    <a href="about.html">English</a>
+                    <a href="about_tengwar.html">Tengwar</a>
+                </div>
+            </div>
+        
+            <div class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Honors</a>
+                <div class="dropdown-content">
+                    <a href="honors.html">English</a>
+                    <a href="honors_tengwar.html">Tengwar</a>
+                </div>
+            </div>
+        
+            <div class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Micronations</a>
+                <div class="dropdown-content">
+                    <a href="other micronations.html">English</a>
+                    <a href="other_micronations_tengwar.html">Tengwar</a>
+                </div>
+            </div>
+        
+            <div class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Government</a>
+                <div class="dropdown-content">
+                    <div class="dropdown-sub">
+                        <a href="javascript:void(0)" class="dropbtn-sub">Constitution</a>
+                        <div class="dropdown-content-sub">
+                            <a href="Constitution.html">English</a>
+                            <a href="Constitution_tengwar.html">Tengwar</a>
+                        </div>
+                    </div>
+        
+                    <div class="dropdown-sub">
+                        <a href="javascript:void(0)" class="dropbtn-sub">Laws</a>
+                        <div class="dropdown-content-sub">
+                            <a href="Laws.html">English</a>
+                            <a href="Laws_tengwar.html">Tengwar</a>
+                        </div>
+                    </div>
+        
+                    <div class="dropdown-sub">
+                        <a href="javascript:void(0)" class="dropbtn-sub">Citizenship & Immigration Policy</a>
+                        <div class="dropdown-content-sub">
+                            <a href="friends.html">English</a>
+                            <a href="friends_tengwar.html">Tengwar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Arcadia</a>
+                <div class="dropdown-content">
+                    <a href="arcadia.html">English</a>
+                </div>
+            </div>
+        
+            <div class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Sky & Hill Report</a>
+                <div class="dropdown-content">
+                    <a href="news.html">English</a>
+                    <a href="news_tengwar.html">Tengwar</a>
+                </div>
+            </div>
+             <a href="army.html">Imperial Military Structure</a>
+        
+            <a href="password.html">Restricted Access</a>  
+            <a href="contact.html">Contact us!</a>  
+        </nav>
+        <button onclick="document.getElementById('anthem').play()">Play National Anthem</button>
+
+    <audio id="anthem">
+        <source src="OCVideo.768426755.639107.mp4" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+        <main>
+            <section id="home" class="section">
+                <h2>Welcome to The Great Gheetan Empire</h2>
+                <p>Stay, look around, and learn about The Great Gheetan Empire's laws and constitution.</p>
+                <p><strong>Fun Facts</strong></p>
+                <p>Gheetan's national anthem "The Gheetan Loth" in the Sindarin version can be interpreted as a symbolic representation of the nation’s strength, unity, or essence. In Sindarin, "Loth" could suggest a flower or a bloom, which is often used metaphorically to signify something precious, beautiful, or strong. Thus, "Gheetan Loth" could evoke the image of the flourishing or growth of the Great Gheetan Empire, symbolizing both beauty and strength.</p>
+                <p>Gheetan's second script is Tengwar.</p>
+                <p>Gheetan's Standard time is UTC-2</p>
+            </section>
+            <section class="holiday-box" id="holiday-box">
+                <!-- Calendar content gets inserted here -->
+            </section>
+        </main>
+    </div>
+    <aside>
+        <h2><strong>The Gheetan Loth</strong></h2>
+        <div class="anthem-container">
+            <div>
+                <p class="anthem-title">Tengwar Script</p>
+                <p class="tengwar-text">
+                    From hills of green, where rivers sing,<br>
+                    Our banners rise to greet the spring.<br>
+                    With hearts unbowed, we face the light,<br>
+                    A future bright, our hopes take flight.
+                </p>
+                <p class="tengwar-text">
+                    With steadfast hearts, we stand so tall,<br>
+                    United strong, we shall not fall.<br>
+                    Our Emperor, both wise and bold,<br>
+                    Shall guard our home as days unfold.
+                </p>
+                <p class="tengwar-text">
+                    But time moves on, the winds grow still,<br>
+                    The empire’s flame begins to chill.<br>
+                    The halls remain, though shadows fall,<br>
+                    And silent whispers fill the wall.
+                </p>
+            </div>
+            <div>
+                <p class="anthem-title">English Script</p>
+                <p>
+                    From hills of green, where rivers sing,<br>
+                    Our banners rise to greet the spring.<br>
+                    With hearts unbowed, we face the light,<br>
+                    A future bright, our hopes take flight.
+                </p>
+                <p>
+                With steadfast hearts, we stand so tall,<br>
+                United strong, we shall not fall.<br>
+                Our Emperor, both wise and bold,<br>
+                Shall guard our home as days unfold.
+                </p>
+                <p>
+                But time moves on, the winds grow still,<br>
+                The empire’s flame begins to chill.<br>
+                The halls remain, though shadows fall,<br>
+                And silent whispers fill the wall.
+                </p>
+                </div>
+        </div>
+    </aside>
+    <footer>
+        <p>&copy; The Great Gheetan Empire. All rights reserved.</p>
+    </footer>
+    <script>
+        // Function to calculate Easter Sunday date
+        function getEasterDate(year) {
+            const a = year % 19;
+            const b = Math.floor(year / 100);
+            const c = year % 100;
+            const d = Math.floor(b / 4);
+            const e = b % 4;
+            const f = Math.floor((b + 8) / 25);
+            const g = Math.floor((b - f + 1) / 3);
+            const h = (19 * a + b - d - g + 15) % 30;
+            const i = Math.floor(c / 4);
+            const k = c % 4;
+            const l = (32 + 2 * e + 2 * i - h - k) % 7;
+            const m = Math.floor((a + 11 * h + 22 * l) / 451);
+            const month = Math.floor((h + l - 7 * m + 114) / 31);
+            const day = ((h + l - 7 * m + 114) % 31) + 1;
+        
+            return new Date(year, month - 1, day);  // Easter Sunday date
+        }
+        
+        // Function to update holidays dynamically
+        function updateEasterHolidays(year) {
+            const easterSunday = getEasterDate(year);
+            const goodFriday = new Date(easterSunday);
+            goodFriday.setDate(easterSunday.getDate() - 2); // Good Friday is 2 days before Easter Sunday
+            const easterMonday = new Date(easterSunday);
+            easterMonday.setDate(easterSunday.getDate() + 1); // Easter Monday is the day after Easter Sunday
+        
+            return [
+                { date: formatDate(goodFriday), name: "Good Friday" },
+                { date: formatDate(easterSunday), name: "Easter Sunday" },
+                { date: formatDate(easterMonday), name: "Easter Monday" }
+            ];
+        }
+        
+        // Helper function to format date as MM-DD
+        function formatDate(date) {
+            return (date.getMonth() + 1 ).toString().padStart(2, '0') + '-' + date.getDate().toString().padStart(2, '0');
+        }
+        
+        // Example usage: Update holidays with the current year
+        const currentYear = new Date().getFullYear();
+        const easterHolidays = updateEasterHolidays(currentYear);
+        
+        // Now you can merge these dynamically calculated holidays with your existing list of holidays
+        const holidays = [
+            ...easterHolidays,  // Adding dynamic Easter holidays
+            { date: '01-01', name: "New Year’s Day" },
+            { date: '02-14', name: "Potato Day", description: "The emperor’s favorite food" },
+            { date: '05-26', name: "The day of Molossia", description: "This is a day to commemorate the day Molossia was founded, we celibrat this day becues The presedent of Molossia helped bild Gheetan to the Empire it is today." },
+            { date: '06-03', name: "The day of Arcadia", description: "To commemorate the day Arcadia joined Gheetan" },
+            { date: '07-05', name: "Founding Day", description: "To celebrate the founding of the empire in Jul of 2022" },
+            { date: '07-12', name: "Mint Chocolate chip Day", description: "A day to celebrate the best flavor of ice cream" },
+            { date: '07-24', name: "The Day of the Glawar", description: "To celebrate the national currency" },
+            { date: '08-06', name: "Celebration Day", description: "To celebrate the birth of the first emperor" },
+            { date: '09-02', name: "Micronation Day", description: "SeaLand, known to be the first micronation, was founded on 2 September 1967" },
+            { date: '10-13', name: "Dog Day", description: "The day to celebrate the Emperor’s dog Frederick" },
+            { date: '10-31', name: "Halloween" },
+            { date: '11-11', name: "Remembrance Day" },
+            { date: '12-24', name: "Christmas Eve" },
+            { date: '12-25', name: "Christmas Day" },
+            { date: '12-26', name: "Boxing Day" },
+            { date: '12-31', name: "New Year’s Eve" }
+        ];
+        
+        const today = new Date(new Date().toUTCString().replace("GMT", "UTC-2"));
+        const todayStr = (today.getMonth() + 1).toString().padStart(2, '0') + '-' + today.getDate().toString().padStart(2, '0');
+        
+        const holidayBox = document.getElementById("holiday-box");
+        
+        const todayHoliday = holidays.find(h => h.date === todayStr);
+        
+        if (todayHoliday) {
+            holidayBox.innerHTML = `<div class="holiday-message">🎉 Happy ${todayHoliday.name}!</div>`;
+        } else {
+            const futureHolidays = holidays.filter(h => {
+                const [month, day] = h.date.split('-');
+                const holidayDate = new Date(today.getFullYear(), parseInt(month) - 1, parseInt(day));
+                return holidayDate >= today;
+            }).slice(0, 5);
+        
+            holidayBox.innerHTML = '<h2>Upcoming Holidays</h2>' +
+                '<ul>' +
+                futureHolidays.map(h => `<li class="holiday-item" onclick="alert('${h.description || h.name}')">${h.name} (${h.date})</li>`).join('') +
+                '</ul>';
+        }
+        </script> 
+        <script>
+            document.body.addEventListener('click', function () {
+              document.getElementById('anthem').play();
+            }, { once: true });
+          </script>
+            
+</body>
+</html>

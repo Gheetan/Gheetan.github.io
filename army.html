@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>army</title>
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+        text-align: center;
+    }
+    
+    header {
+        background-color: #4CAF50;
+        color: white;
+        padding: 20px;
+        width: 100%;
+    }
+    
+    nav {
+        background-color: #333;
+        overflow: hidden;
+    }
+    
+    nav a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+    }
+    
+    nav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+    
+    .dropdown {
+        float: left;
+        overflow: hidden;
+    }
+    
+    .dropdown .dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 20px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    
+    .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+    
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    
+    /* New CSS for sub-dropdown: only show when hovering the sub-menu */
+    .dropdown-sub {
+        position: relative;
+    }
+    
+    .dropdown-sub:hover .dropdown-content-sub {
+        display: block;
+    }
+    
+    .dropdown-content-sub {
+        display: none;
+        position: absolute;
+        left: 100%;
+        top: 0;
+        background-color: #ddd;
+        min-width: 140px;
+        z-index: 1;
+    }
+    
+    .dropdown-content-sub a {
+        color: black;
+        padding: 10px 12px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+    
+    .dropdown-content-sub a:hover {
+        background-color: #bbb;
+    }
+    
+    .section {
+        margin: 20px auto;
+        max-width: 800px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    footer {
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
+    
+    @font-face {
+        font-family: 'Tengwar';
+        src: url('tengwarfeanorregular.ttf') format('truetype');
+    }
+    
+    .tengwar-text {
+        font-family: 'Tengwar', sans-serif;
+    }
+    
+    .anthem-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    
+    .anthem-container div {
+        flex: 1;
+        min-width: 300px;
+    }
+    
+    .anthem-title {
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+    
+       </style>   
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Laws and Regulations of The Great Empire of Gheetan</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+    
+        <div class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">About</a>
+            <div class="dropdown-content">
+                <a href="about.html">English</a>
+                <a href="about_tengwar.html">Tengwar</a>
+            </div>
+        </div>
+    
+        <div class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Honors</a>
+            <div class="dropdown-content">
+                <a href="honors.html">English</a>
+                <a href="honors_tengwar.html">Tengwar</a>
+            </div>
+        </div>
+    
+        <div class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Micronations</a>
+            <div class="dropdown-content">
+                <a href="other micronations.html">English</a>
+                <a href="other_micronations_tengwar.html">Tengwar</a>
+            </div>
+        </div>
+    
+        <div class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Government</a>
+            <div class="dropdown-content">
+                <div class="dropdown-sub">
+                    <a href="javascript:void(0)" class="dropbtn-sub">Constitution</a>
+                    <div class="dropdown-content-sub">
+                        <a href="Constitution.html">English</a>
+                        <a href="Constitution_tengwar.html">Tengwar</a>
+                    </div>
+                </div>
+    
+                <div class="dropdown-sub">
+                    <a href="javascript:void(0)" class="dropbtn-sub">Laws</a>
+                    <div class="dropdown-content-sub">
+                        <a href="Laws.html">English</a>
+                        <a href="Laws_tengwar.html">Tengwar</a>
+                    </div>
+                </div>
+    
+                <div class="dropdown-sub">
+                    <a href="javascript:void(0)" class="dropbtn-sub">Citizenship & Immigration Policy</a>
+                    <div class="dropdown-content-sub">
+                        <a href="friends.html">English</a>
+                        <a href="friends_tengwar.html">Tengwar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Arcadia</a>
+            <div class="dropdown-content">
+                <a href="arcadia.html">English</a>
+            </div>
+        </div>
+    
+        <div class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Sky & Hill Report</a>
+            <div class="dropdown-content">
+                <a href="news.html">English</a>
+                <a href="news_tengwar.html">Tengwar</a>
+            </div>
+        </div>
+        <a href="army.html">Imperial Military Structure</a>
+    
+        <a href="password.html">Restricted Access</a>  
+        <a href="contact.html">Contact us!</a>  
+    </nav>
+
+    <div class="section">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gheetan Imperial Rank System</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
+    h1, h2 { color: #003366; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f2f2f2; }
+  </style>
+</head>
+<body>
+  <h1>Gheetan Imperial Rank System</h1>
+
+  <h2>🚀 Specialists</h2>
+  <table>
+    <tr><th>Role Plaque</th><th>Role</th></tr>
+    <tr><td>🟡🟡🟡🟡🟡🟡</td><td><strong>Intelligence Officer</strong><br>Espionage, security operations, and counter-intelligence</td></tr>
+    <tr><td>🟡🟡🟡 🔵🔵🔵</td><td><strong>Science Officer</strong><br>Technological innovation, labs, and research vessels</td></tr>
+    <tr><td>🟡🟡🟡 🔴🔴🔴</td><td><strong>Imperial Inspector</strong><br>Internal affairs and investigations on behalf of the Emperor</td></tr>
+  </table>
+
+  <h2>🧵 Pre-Officer Ranks with Peacetime and Wartime Roles</h2>
+  <table>
+    <tr><th>Rank</th><th>Insignia</th><th>Peacetime Role</th><th>Wartime Role</th></tr>
+    <tr><td>Private (Basic)</td><td>1 Gray line</td><td>Basic training, indoctrination</td><td>Emergency conscript, rapid basic training</td></tr>
+    <tr><td>Private (Trained)</td><td>2 Gray lines</td><td>Assigned to basic duties</td><td>Frontline support personnel</td></tr>
+    <tr><td>Corporal</td><td>1 Gold line</td><td>Leadership trainee</td><td>Squad-level tactical trainee</td></tr>
+    <tr><td>Senior Corporal</td><td>2 Gold lines</td><td>Leads training exercises</td><td>Squad leader in active operations</td></tr>
+    <tr><td>Sergeant</td><td>1 Red line</td><td>Field trial for commission</td><td>Platoon leader or combat unit deputy</td></tr>
+    <tr><td>Probationary Ensign</td><td>2 Blue lines</td><td>Pre-commission, final evaluations</td><td>Frontline junior officer, acting company lead</td></tr>
+  </table>
+
+  <h2>🔵 Phase Officers</h2>
+  <table>
+    <tr><th>Rank</th><th>Plaque</th><th>Total</th><th>Role</th></tr>
+    <tr><td>Ensign</td><td>🔵🔵</td><td>2</td><td>Entry officer. Commander’s Assistant</td></tr>
+    <tr><td>Lieutenant</td><td>🔵🔵🔵</td><td>3</td><td>Junior officer, bridge or patrol duties</td></tr>
+    <tr><td>Captain</td><td>🔵🔵🔵🔵🔵🔵</td><td>6</td><td>Ship, detachment, or company commander</td></tr>
+  </table>
+
+  <h2>🔵+🔴 Phase Senior Officers</h2>
+  <table>
+    <tr><th>Rank</th><th>Plaque</th><th>Total</th><th>Role</th></tr>
+    <tr><td>Commander</td><td>🔵🔵🔵🔵🔵🔵 🔴🔴</td><td>8</td><td>Battalion or ship unit command</td></tr>
+    <tr><td>Colonel</td><td>🔵🔵🔵🔵🔵🔵 🔴🔴🔴</td><td>9</td><td>Regional command or key installation control</td></tr>
+    <tr><td>General</td><td>🔵🔵🔵🔵🔵🔵 🔴🔴🔴🔴🔴🔴</td><td>12</td><td>Field army or sector fleet leadership</td></tr>
+  </table>
+
+  <h2>🔵+🔴+🟡 Phase High Officers</h2>
+  <table>
+    <tr><th>Rank</th><th>Plaque</th><th>Total</th><th>Role</th></tr>
+    <tr><td>High General</td><td>🔵🔵🔵🔵🔵🔵 🔴🔴🔴🔴🔴🔴 🟡🟡</td><td>14</td><td>Army-wide command and national defense, conforms with the Emperor</td></tr>
+    <tr><td>Grand Warden</td><td>🔵🔵🔵🔵🔵🔵 🔴🔴🔴🔴🔴🔴 🟡🟡🟡</td><td>15</td><td>Supreme military and regional administrative power, second only to the Emperor</td></tr>
+  </table>
+
+  <h2>📟 Supreme Rank</h2>
+  <table>
+    <tr><th>Rank</th><th>Plaque</th><th>Total</th><th>Role</th></tr>
+    <tr><td>The Emperor</td><td>🔵🔵🔵🔵🔵🔵 🔴🔴🔴🔴🔴🔴 🟡🟡🟡🟡🟡🟡</td><td>18</td><td>Supreme Ruler of All: source of law, rank, and absolute power</td></tr>
+  </table>
+
+  <h2>Great Gheetan Empire Naval Structure</h2>
+  <table>
+    <tr><th>Level</th><th>Approx. Personnel</th><th>Command Rank</th><th>Sub-units</th></tr>
+    <tr><td>Squad</td><td>8–12</td><td>Senior Corporal</td><td>Individuals</td></tr>
+    <tr><td>Platoon</td><td>24–48</td><td>Sergeant</td><td>3–4 Squads</td></tr>
+    <tr><td>Ship</td><td>72–240</td><td>Captain</td><td>3–5 Platoons</td></tr>
+    <tr><td>Ship Unit</td><td>300–1,000</td><td>Commander</td><td>4–6 Ships</td></tr>
+    <tr><td>Regional Command</td><td>1,000–5,000</td><td>Colonel</td><td>3–5 Ship Units</td></tr>
+    <tr><td>Fleet</td><td>5,000–15,000</td><td>General</td><td>2–4 Regional Commands</td></tr>
+    <tr><td>Naval Command</td><td>15,000–50,000+</td><td>High General</td><td>Oversees multiple fleets, strategic empire-wide command</td></tr>
+    <tr><td>Supreme Command</td><td>Entire Military</td><td>Grand Warden</td><td>Highest military authority under the Emperor</td></tr>
+    <tr><td>Imperial Command</td><td>Entire Empire & Military</td><td>The Emperor</td><td>Supreme Ruler and Commander-in-Chief of all forces</td></tr>
+  </table>
+
+  <h2>Great Gheetan Empire Army Structure</h2>
+  <table>
+    <tr><th>Level</th><th>Approx. Personnel</th><th>Command Rank</th><th>Sub-units</th></tr>
+    <tr><td>Squad</td><td>8–12</td><td>Senior Corporal</td><td>Individuals</td></tr>
+    <tr><td>Platoon</td><td>24–48</td><td>Sergeant</td><td>3–4 Squads</td></tr>
+    <tr><td>Company</td><td>100–150</td><td>Captain</td><td>3–4 Platoons</td></tr>
+    <tr><td>Battalion</td><td>300–600</td><td>Commander</td><td>3–4 Companies</td></tr>
+    <tr><td>Regional Command</td><td>1,000–3,000</td><td>Colonel</td><td>3–5 Battalions</td></tr>
+    <tr><td>Field Army</td><td>10,000–15,000</td><td>General</td><td>4–5 Regional Commands</td></tr>
+    <tr><td>Army Command</td><td>15,000–50,000+</td><td>High General</td><td>2–4 Field Armies</td></tr>
+    <tr><td>Supreme Command</td><td>Entire Military</td><td>Grand Warden</td><td>Highest military authority under the Emperor</td></tr>
+    <tr><td>Imperial Command</td><td>Entire Empire & Military</td><td>The Emperor</td><td>Absolute authority over all branches</td></tr>
+  </table>
+</body>
+</html>
+    <footer>
+        &copy; The Great Gheetan Empire
+    </footer>
+</body>
+</html>

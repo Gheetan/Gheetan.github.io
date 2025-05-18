@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gheetan Empire</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            text-align: center;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            width: 100%;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 20px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .section {
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @font-face {
+            font-family: 'Tengwar';
+            src: url('tengwarfeanorregular.ttf') format('truetype');
+        }
+
+        .tengwar-text {
+            font-family: 'Tengwar', sans-serif;
+        }
+
+        .anthem-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .anthem-container div {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .anthem-title {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn">About 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="about.html">English</a>
+                <a href="about_tengwar.html">Tengwar</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Constitution 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="Constitution.html">English</a>
+                <a href="Constitution_tengwar.html">Tengwar</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Laws 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="Laws.html">English</a>
+                <a href="Laws_tengwar.html">Tengwar</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Micronations 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="other micronations.html">English</a>
+                <a href="other_micronations_tengwar.html">Tengwar</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Citizenship & Immigration Policy 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="friends.html">English</a>
+                <a href="friends_tengwar.html">Tengwar</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Government 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="militare.html">English</a>
+                <a href="militare_tengwar.html">Tengwar</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Sky & Hill Report 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="news.html">English</a>
+                <a href="news_tengwar.html">Tengwar</a>
+            </div>
+        </div>
+         <a href="army.html">Imperial Military Structure</a>
+    </nav> 
+    <section id="latest-news">
+        <h2>Latest News</h2>
+
+        <div class="news-item">
+            <h3><a href="news-1.html">Gheetan Empire Faces Uncertainty Amid Rising U.S. Canada Tensions- Sky & Hill Report</a></h3>
+            <p class="date">March 5, 2025</p>
+            <p>The Great Gheetan Empire braces for shortages and rising costs as U.S. tariffs on Canadian goods threaten vital supplies. The Emperor urges citizens to stay alert and prepare.</p>
+        </div>
+        <div class="news-item">
+            <h3><a href="news-2.html">Arcadia Joins the Great Gheetan Empire </a></h3>
+            <p class="date">March 25, 2025</p>
+            <p>At 1:00 PM GST, Arcadia became a realm of the Great Gheetan Empire. The former High King now holds the title Lord High King, marking a historic and peaceful union.</p>
+        </div>
+    </section>
+    <footer>
+        &copy; 2024 The Great Gheetan Empire
+    </footer>
+</body>
+</html>
