@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gheetan Military Application</title>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 1em; background: #f4f4f4; }
+  label { display: block; margin-top: 1em; }
+  input, select, textarea { width: 100%; padding: 0.5em; margin-top: 0.3em; }
+  button { margin-top: 1.5em; padding: 0.7em 1.5em; font-size: 1em; }
+  .error { color: red; margin-top: 0.5em; }
+</style>
+</head>
+<body>
+<h1>Gheetan Military Application Form</h1>
+
+<form id="militaryForm">
+  <label>Full Name*:<input type="text" name="fullName" required /></label>
+
+  <label>Date of Birth*:<input type="date" name="dob" required /></label>
+
+  <label>Preferred Branch*:
+    <select name="branch" required>
+      <option value="">-- Select --</option>
+      <option value="Army">Army</option>
+      <option value="Navy">Navy</option>
+      <option value="Air Force">Air Force</option>
+      <option value="Marines">Marines</option>
+      <option value="Other">Other</option>
+    </select>
+  </label>
+
+  <label>Are you currently a citizen of the Great Gheetan Empire?*:
+    <select name="citizen" required>
+      <option value="">-- Select --</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select>
+  </label>
+
+  <label>Describe what loyalty to the Emperor means to you personally*:
+    <textarea name="loyalty" rows="3" required></textarea>
+  </label>
+
+  <label>Why do you wish to join the Gheetan Military?*:
+    <textarea name="motivation" rows="3" required></textarea>
+  </label>
+
+  <label>Do you swear loyalty to the Emperor and the Great Gheetan Empire?*:
+    <select name="swearLoyalty" required>
+      <option value="">-- Select --</option>
+      <option value="I do">I do</option>
+      <option value="I do not">I do not</option>
+    </select>
+  </label>
+
+  <label>Do you have training or certifications in any of the following areas? (Optional):
+    <textarea name="training" rows="3"></textarea>
+  </label>
+
+  <label>Relevant Skills or Experience (Optional):
+    <textarea name="skills" rows="3"></textarea>
+  </label>
+
+  <button type="submit">Submit Application</button>
+  <p id="form-message" class="error"></p>
+</form>
+
+<p><a href="index.html">Back to Home</a></p>
+
+<script>
+// Your Firebase config here (replace with your own)
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY_HERE",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT_ID.appspot.com",
+  messagingSenderId: "SENDER_ID",
+  appId: "APP_ID"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+const form = document.getElementById('militaryForm');
+const formMessage = document.getElementById('form-message');
+
+const bannedWords = [
+  // previous 50...
+  "kill", "murder", "assassinate", "terrorism", "terrorist", "explode",
+  "bomb", "gun", "shoot", "massacre", "execute", "stab", "violence",
+  "attack", "hijack", "torture", "rape", "abuse", "sex", "nazi", "jihad",
+  "isis", "al-qaeda", "taliban", "traitor", "treason", "sabotage",
+  "destroy", "blood", "suicide", "hang", "lynch", "behead", "decapitate",
+  "sniper", "molest", "pedophile", "racist", "slur", "hate", "genocide",
+  "slaughter", "arson", "shooting", "hostage", "meth", "drug", "dealer",
+  "gang", "cartel", "extort", "corrupt", "threat", "molotov", "grenade",
+  "napalm", "bombing", "tnt", "sarin", "nuke", "nuclear", "biohazard",
+  "chemical weapon", "gas attack", "pipe bomb", "incel", "white power",
+  "kkk", "neo-nazi", "communist pig", "burn flag", "anarchy", "revolt",
+  "insurgency", "overthrow", "imperial downfall",
+
+  // new 50 below
+  "slit", "strangle", "execute", "decimate", "eradicate", "uprising", "coup",
+  "overthrow government", "dirty bomb", "child abuse", "child porn", "porn",
+  "explosives", "hate crime", "kill myself", "i will kill", "bomb threat",
+  "threaten", "death to", "i hate", "die", "burn church", "burn mosque",
+  "burn synagogue", "school shooter", "school shooting", "mass shooter",
+  "mass killing", "race war", "purge", "chemical attack", "chloroform",
+  "cyanide", "suffocate", "kill list", "blackmail", "infiltrate", "plant bomb",
+  "booby trap", "martyr", "AK-47", "AR-15", "glock", "ammo", "bullet",
+  "radicalize", "convert or die", "uncivil war", "wage war", "resistance"
+];
+
+
+// Device ID stored in localStorage for banning
+let deviceId = localStorage.getItem('gheetanDeviceId');
+if (!deviceId) {
+  deviceId = 'device-' + Math.random().toString(36).substr(2, 12);
+  localStorage.setItem('gheetanDeviceId', deviceId);
+}
+
+// Check if device is banned and block form if so
+async function checkDeviceBan() {
+  const doc = await db.collection('bannedDevices').doc(deviceId).get();
+  if (doc.exists) {
+    alert('Your device has been permanently banned from submitting applications.');
+    form.style.display = 'none';
+    return true;
+  }
+  return false;
+}
+
+// Run ban check on page load
+checkDeviceBan();
+
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  formMessage.textContent = '';
+
+  // Check banned words on all text inputs/textarea
+  const textToCheck = [
+    form.fullName.value,
+    form.loyalty.value,
+    form.motivation.value,
+    form.training.value,
+    form.skills.value
+  ].join(' ').toLowerCase();
+
+  for (const word of bannedWords) {
+    if (textToCheck.includes(word)) {
+      alert('Sorry, you have used a banned word. Your device will be banned from submitting.');
+      await db.collection('bannedDevices').doc(deviceId).set({ bannedAt: new Date() });
+      form.style.display = 'none';
+      return;
+    }
+  }
+
+  if (form.swearLoyalty.value !== "I do") {
+    formMessage.textContent = "You must swear loyalty to submit your application.";
+    return;
+  }
+
+  try {
+    await db.collection('applications').add({
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      fullName: form.fullName.value,
+      dob: form.dob.value,
+      branch: form.branch.value,
+      citizen: form.citizen.value,
+      loyalty: form.loyalty.value,
+      motivation: form.motivation.value,
+      swearLoyalty: form.swearLoyalty.value,
+      training: form.training.value,
+      skills: form.skills.value,
+      deviceId: deviceId
+    });
+    alert('Application submitted successfully. Redirecting to home page.');
+    window.location.href = "index.html";
+  } catch (error) {
+    formMessage.textContent = 'Submission failed: ' + error.message;
+  }
+});
+</script>
+</body>
+</html>
+
+
